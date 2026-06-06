@@ -1,6 +1,64 @@
-﻿let myMap;
-// app.js
-// Замените старый массив const restaurants в самом начале файла на этот полный список:
+﻿function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+    } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+    }
+    updateThemeIcon();
+}
+
+function toggleTheme() {
+    if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+    } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+    }
+    updateThemeIcon();
+}
+
+function updateThemeIcon() {
+    const isDark = document.documentElement.classList.contains('dark');
+    const themeIconContainer = document.getElementById('theme-icon-container');
+
+    // SVG иконка солнца
+    const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+
+    // SVG иконка луны
+    const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+    if (isDark) {
+        themeIconContainer.innerHTML = moonIcon;
+    } else {
+        themeIconContainer.innerHTML = sunIcon;
+    }
+}
+
+// Инициализируем тему при загрузке
+initTheme();
+
+let myMap;
+
+// Локальные изображения для категорий
+const categoryImages = {
+    "сибирская": "./images/siberian.jpg",
+    "русская": "./images/russian.jpg",
+    "европейская": "./images/europian.jpg",
+    "средиземноморская": "./images/srzem.jpg",
+    "азиатская": "./images/asian.jpg",
+    "кавказская": "./images/caucasion.jpg",
+    "среднеазиатская": "./images/srasian.jpg",
+    "американская": "./images/american.jpg",
+    "авторская": "./images/authorian.jpg",
+    "кофейни": "./images/coffee.jpg",
+    "бары": "./images/bars.jpg"
+};
+
+// Картинка-заглушка на случай, если категория не найдена
+const DEFAULT_IMAGE = "./images/europian.jpg";
 
 const restaurants = [
     {
@@ -2007,23 +2065,29 @@ function createPlacemark(coords, restaurant) {
 
 // Переключение вкладки сайдбара
 function switchTab(tabId) {
+
     currentTab = tabId;
     const tabs = ['catalog', 'quiz', 'services'];
 
     tabs.forEach(t => {
         document.getElementById(`tab-${t}`).classList.add('hidden');
         document.getElementById(`tab-btn-${t}`).classList.remove('text-[#d47b52]', 'border-[#d47b52]');
-        document.getElementById(`tab-btn-${t}`).classList.add('text-zinc-400', 'border-transparent');
+        document.getElementById(`tab-btn-${t}`).classList.add('text-gray-500', 'dark:text-zinc-400', 'border-transparent');
     });
 
     document.getElementById(`tab-${tabId}`).classList.remove('hidden');
     document.getElementById(`tab-btn-${tabId}`).classList.add('text-[#d47b52]', 'border-[#d47b52]');
-    document.getElementById(`tab-btn-${tabId}`).classList.remove('text-zinc-400', 'border-transparent');
+    document.getElementById(`tab-btn-${tabId}`).classList.remove('text-gray-500', 'dark:text-zinc-400', 'border-transparent');
 
     const filterContainer = document.getElementById('category-filters');
 
     if (tabId === 'quiz') {
         if (filterContainer) filterContainer.classList.add('hidden');
+
+        if (activeMultiRoute) {
+            map.geoObjects.remove(activeMultiRoute);
+            activeMultiRoute = null;
+        }
 
         if (!isQuizFinished) {
             if (geoCollection) geoCollection.removeAll();
@@ -2048,7 +2112,6 @@ function switchTab(tabId) {
     }
     else if (tabId === 'services') {
         if (filterContainer) filterContainer.classList.add('hidden');
-
         // ИСПРАВЛЕНО: При возврате на вкладку сервисов восстанавливаем маркер ближайшего, если он существует
         if (!nearestGeoRestaurant) {
             if (targetMarkersCollection) targetMarkersCollection.removeAll();
@@ -2083,7 +2146,7 @@ function renderRestaurants(filterText = '') {
     });
 
     if (filtered.length === 0) {
-        listContainer.innerHTML = '<p class="text-xs text-zinc-500 p-4">Ничего не найдено.</p>';
+        listContainer.innerHTML = '<p class="text-xs text-gray-500 dark:text-zinc-500 p-4">Ничего не найдено.</p>';
     }
 
     filtered.forEach(r => {
@@ -2093,15 +2156,15 @@ function renderRestaurants(filterText = '') {
 
         const card = document.createElement('div');
         card.id = `card-${r.id}`;
-        card.className = 'restaurant-card p-4 rounded-xl cursor-pointer hover:bg-zinc-800/50 transition-all border border-transparent hover:border-zinc-800';
+        card.className = 'restaurant-card p-4 rounded-xl cursor-pointer transition-all';
         card.addEventListener('click', () => showRestaurantDetails(r.id, true));
 
         card.innerHTML = `
             <div class="flex justify-between items-start gap-2">
-                <h4 class="font-bold text-sm text-white">${r.name}</h4>
+                <h4 class="font-bold text-sm text-gray-900 dark:text-white">${r.name}</h4>
                 <span class="text-[10px] uppercase font-bold tracking-wider text-[#d47b52] px-2 py-0.5 rounded bg-[#d47b52]/10 border border-[#d47b52]/20 shrink-0">${r.category}</span>
             </div>
-            <p class="text-xs text-zinc-400 mt-1.5 line-clamp-2">${r.description || ''}</p>
+            <p class="text-xs text-gray-500 dark:text-zinc-400 mt-1.5 line-clamp-2">${r.description || ''}</p>
         `;
         listContainer.appendChild(card);
     });
@@ -2122,7 +2185,11 @@ function showRestaurantDetails(id, panTo = false) {
         activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
-    document.getElementById('details-img').src = r.image || '';
+    // Определяем ключ категории (приводим к нижнему регистру)
+    const categoryKey = (r.category || '').toLowerCase();
+    // Берём картинку из объекта или заглушку
+    const imageSrc = categoryImages[categoryKey] || DEFAULT_IMAGE;
+    document.getElementById('details-img').src = imageSrc;
     document.getElementById('details-badge').innerText = r.category || '';
     document.getElementById('details-name').innerText = r.name || '';
     document.getElementById('details-cuisine').innerText = r.cuisine || '';
@@ -2205,11 +2272,11 @@ function filterCategory(category, btnElement) {
     if (searchInput) searchInput.value = '';
 
     document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active', 'bg-[#d47b52]', 'text-white'));
-    document.querySelectorAll('.category-btn').forEach(btn => btn.classList.add('text-zinc-400'));
+    document.querySelectorAll('.category-btn').forEach(btn => btn.classList.add('text-gray-500', 'dark:text-zinc-400'));
 
     if (btnElement) {
         btnElement.classList.add('active', 'bg-[#d47b52]', 'text-white');
-        btnElement.classList.remove('text-zinc-400');
+        btnElement.classList.remove('text-gray-500', 'dark:text-zinc-400');
     }
 
     renderRestaurants('');
@@ -2369,23 +2436,23 @@ function calculateQuizResult() {
     recContainer.innerHTML = '';
 
     if (bestMatches.length === 0) {
-        recContainer.innerHTML = '<p class="text-center text-zinc-400 text-xs py-4">Не найдено подходящих ресторанов.</p>';
+        recContainer.innerHTML = '<p class="text-center text-gray-500 dark:text-zinc-400 text-xs py-4">Не найдено подходящих ресторанов.</p>';
     } else {
         bestMatches.forEach((r, idx) => {
             const item = document.createElement('div');
-            item.className = 'bg-zinc-900/90 border border-zinc-800 p-3 rounded-xl flex justify-between items-center cursor-pointer hover:border-[#d47b52] transition-colors';
+            item.className = 'bg-gray-50 dark:bg-zinc-900/90 border border-gray-200 dark:border-zinc-800 p-3 rounded-xl flex justify-between items-center cursor-pointer hover:border-[#d47b52] dark:hover:border-[#d47b52] transition-colors';
             item.onclick = () => showRestaurantDetails(r.id, true);
 
             const score = matchScores.find(m => m.restaurant.id === r.id).score;
             item.innerHTML = `
                 <div class="flex-1">
-                    <h5 class="text-xs font-bold text-white">${idx + 1}. ${r.name}</h5>
+                    <h5 class="text-xs font-bold text-gray-900 dark:text-white">${idx + 1}. ${r.name}</h5>
                     <p class="text-[10px] text-[#d47b52] mt-0.5">${r.cuisine}</p>
-                    <p class="text-[9px] text-zinc-500 mt-1">${r.price}</p>
+                    <p class="text-[9px] text-gray-500 dark:text-zinc-500 mt-1">${r.price}</p>
                 </div>
                 <div class="text-right">
                     <div class="text-[10px] font-bold text-[#d47b52] mb-1">Совпадение: ${score}</div>
-                    <i class="fa-solid fa-arrow-right text-zinc-600 text-xs"></i>
+                    <i class="fa-solid fa-arrow-right text-gray-400 dark:text-zinc-600 text-xs"></i>
                 </div>
             `;
             recContainer.appendChild(item);
@@ -2457,6 +2524,12 @@ function findNearestByGPS() {
             const userCoords = [lat, lng];
 
             if (map && userMarkersCollection) {
+
+                if (activeMultiRoute) {
+                    map.geoObjects.remove(activeMultiRoute);
+                    activeMultiRoute = null;
+                }
+
                 userMarkersCollection.removeAll();
 
                 const userMarker = new ymaps.Placemark(userCoords, {
@@ -2600,13 +2673,14 @@ function evaluateNearest(userCoords, titleText) {
         // ИСПРАВЛЕНО: Обернули результат в стильный кликабельный блок с эффектом ховера.
         // Клик по нему вызывает плавный полет к заведению на карте и открывает детали.
         resultDiv.innerHTML = `
-            <div class="space-y-1 p-3 bg-zinc-900/80 border border-zinc-800 hover:border-[#d47b52] rounded-xl cursor-pointer transition-all active:scale-[0.98]" onclick="showRestaurantDetails('${nearestRest.id}', true)">
+            <div class="space-y-1 p-3 bg-gray-50 dark:bg-zinc-900/80 border border-gray-200 dark:border-zinc-800 hover:border-[#d47b52] dark:hover:border-[#d47b52] rounded-xl cursor-pointer transition-all active:scale-[0.98]" onclick="showRestaurantDetails('${nearestRest.id}', true)">
                 <span class="text-[10px] font-bold uppercase block text-emerald-500">✓ Ближайшее найдено:</span>
-                <span class="text-white font-bold block">${nearestRest.name}</span>
-                <span class="text-zinc-400 block">Расстояние: ~${km} км</span>
-                <span class="text-zinc-500 text-[9px] block">От: ${titleText}</span>
+                <span class="text-gray-900 dark:text-white font-bold block">${nearestRest.name}</span>
+                <span class="text-gray-500 dark:text-zinc-400 block">Расстояние: ~${km} км</span>
+                <span class="text-gray-400 dark:text-zinc-500 text-[9px] block">От: ${titleText}</span>
             </div>
         `;
+
 
         showRestaurantDetails(nearestRest.id, true);
 
@@ -2622,35 +2696,6 @@ function evaluateNearest(userCoords, titleText) {
     }
 }
 
-function buildRouteToNearest(userCoords, restCoords) {
-    clearBuiltRoute();
-
-    const startPoint = ensureArrayCoords(userCoords);
-    const endPoint = ensureArrayCoords(restCoords);
-
-    if (!startPoint || !endPoint) {
-        console.error("❌ Ошибка: Невозможно прочесть координаты точек для роутинга.");
-        return;
-    }
-
-    activeMultiRoute = new ymaps.multiRouter.MultiRoute({
-        referencePoints: [startPoint, endPoint],
-        params: { routingMode: 'auto' }
-    }, {
-        boundsAutoApply: true,
-        routeActiveStrokeColor: "#d47b52",
-        routeActiveStrokeWidth: 4,
-        routeStrokeColor: "#d47b52"
-    });
-
-    activeMultiRoute.model.events.add('requestfail', function (event) {
-        console.error("❌ Яндекс не смог рассчитать путь «Хочу покушать». Причина:", event.get('error').message);
-    });
-
-    if (map) {
-        map.geoObjects.add(activeMultiRoute);
-    }
-}
 
 function buildRouteSelectorList() {
     const container = document.getElementById('route-selector-list');
@@ -2659,12 +2704,12 @@ function buildRouteSelectorList() {
 
     restaurants.forEach(r => {
         const div = document.createElement('label');
-        div.className = 'flex items-center gap-2.5 p-2 rounded-lg hover:bg-zinc-800/40 cursor-pointer text-xs text-zinc-300 transition-colors';
+        div.className = 'flex items-center gap-2.5 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800/40 cursor-pointer text-xs transition-colors';
         div.innerHTML = `
             <input type="checkbox" value="${r.id}" class="route-checkbox shrink-0">
             <div class="truncate">
-                <span class="font-bold text-white block truncate">${r.name}</span>
-                <span class="text-[10px] text-zinc-500 truncate block">${r.address}</span>
+                <span class="font-bold text-gray-900 dark:text-white block truncate">${r.name}</span>
+                <span class="text-[10px] text-gray-500 dark:text-zinc-500 truncate block">${r.address}</span>
             </div>
         `;
         container.appendChild(div);
