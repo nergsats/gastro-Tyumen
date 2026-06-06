@@ -2065,7 +2065,6 @@ function createPlacemark(coords, restaurant) {
 
 // Переключение вкладки сайдбара
 function switchTab(tabId) {
-
     currentTab = tabId;
     const tabs = ['catalog', 'quiz', 'services'];
 
@@ -2081,30 +2080,28 @@ function switchTab(tabId) {
 
     const filterContainer = document.getElementById('category-filters');
 
+    // Если уходим с навигации - прячем линию маршрута с карты (но не удаляем из памяти!)
+    if (tabId !== 'services' && activeMultiRoute && map) {
+        map.geoObjects.remove(activeMultiRoute);
+    }
+
     if (tabId === 'quiz') {
         if (filterContainer) filterContainer.classList.add('hidden');
-
-        if (activeMultiRoute) {
-            map.geoObjects.remove(activeMultiRoute);
-            activeMultiRoute = null;
-        }
 
         if (!isQuizFinished) {
             if (geoCollection) geoCollection.removeAll();
             if (targetMarkersCollection) targetMarkersCollection.removeAll();
             if (userMarkersCollection) userMarkersCollection.removeAll();
-            clearBuiltRoute();
         } else {
+            // ВОССТАНАВЛИВАЕМ маркеры теста при переходе на вкладку!
             renderQuizMarkers();
         }
     }
     else if (tabId === 'catalog') {
         if (filterContainer) filterContainer.classList.remove('hidden');
 
-        // ИСПРАВЛЕНО: Если есть найденный через гео-подбор ресторан, мы не стираем его маркер, а оставляем на карте вместе с каталогом
         if (!nearestGeoRestaurant) {
             if (targetMarkersCollection) targetMarkersCollection.removeAll();
-            clearBuiltRoute();
         } else {
             renderNearestGeoComponents();
         }
@@ -2112,7 +2109,14 @@ function switchTab(tabId) {
     }
     else if (tabId === 'services') {
         if (filterContainer) filterContainer.classList.add('hidden');
-        // ИСПРАВЛЕНО: При возврате на вкладку сервисов восстанавливаем маркер ближайшего, если он существует
+
+        // Очищаем карту от маркеров каталога и квиза
+        if (geoCollection) geoCollection.removeAll();
+
+        // ВОССТАНАВЛИВАЕМ линию маршрута при возврате в Навигацию
+        if (activeMultiRoute && map) {
+        }
+
         if (!nearestGeoRestaurant) {
             if (targetMarkersCollection) targetMarkersCollection.removeAll();
         } else {
@@ -2177,6 +2181,10 @@ function showRestaurantDetails(id, panTo = false) {
 
     previousTab = currentTab;
     console.log("💾 Сохранена предыдущая вкладка:", previousTab);
+
+    if (activeMultiRoute && map) {
+        map.geoObjects.remove(activeMultiRoute);
+    }
 
     document.querySelectorAll('.restaurant-card').forEach(card => card.classList.remove('active'));
     const activeCard = document.getElementById(`card-${id}`);
@@ -2248,11 +2256,15 @@ function closeDetails() {
 
     if (previousTab === 'quiz' && isQuizFinished) {
         renderQuizMarkers();
-        clearBuiltRoute();
     }
-    // ИСПРАВЛЕНО: При возврате из деталей в навигацию возвращаем на карту маркер и линию пути
-    else if (previousTab === 'services' && nearestGeoRestaurant) {
-        renderNearestGeoComponents();
+    else if (previousTab === 'services') {
+        if (nearestGeoRestaurant) {
+            renderNearestGeoComponents();
+        }
+        // ВОЗВРАЩАЕМ линию маршрута после закрытия деталей
+        if (activeMultiRoute && map) {
+            map.geoObjects.add(activeMultiRoute);
+        }
     }
     else {
         if (targetMarkersCollection) {
@@ -2261,7 +2273,6 @@ function closeDetails() {
         if (map) {
             map.setZoom(13);
         }
-        clearBuiltRoute();
     }
 }
 
@@ -2509,8 +2520,7 @@ function findNearestByGPS() {
     resultDiv.innerHTML = `<i class="fa-solid fa-spinner fa-spin mr-1"></i> Определение координат GPS...`;
 
     // ИСПРАВЛЕНО: Очищаем результаты старого квиза, чтобы избежать конфликтов на карте
-    isQuizFinished = false;
-    quizResultsData = [];
+
 
     if (!navigator.geolocation) {
         resultDiv.innerText = "Геолокация не поддерживается вашим браузером.";
@@ -2524,12 +2534,6 @@ function findNearestByGPS() {
             const userCoords = [lat, lng];
 
             if (map && userMarkersCollection) {
-
-                if (activeMultiRoute) {
-                    map.geoObjects.remove(activeMultiRoute);
-                    activeMultiRoute = null;
-                }
-
                 userMarkersCollection.removeAll();
 
                 const userMarker = new ymaps.Placemark(userCoords, {
@@ -2572,9 +2576,6 @@ function findNearestByAddress() {
     resultDiv.innerHTML = `<i class="fa-solid fa-spinner fa-spin mr-1"></i> Геокодирование адреса...`;
 
     // ИСПРАВЛЕНО: Очищаем старый квиз
-    isQuizFinished = false;
-    quizResultsData = [];
-
     ymaps.geocode("Тюмень, " + addressVal, { results: 1 }).then(res => {
         const firstObj = res.geoObjects.get(0);
         if (firstObj) {
@@ -2731,7 +2732,8 @@ function buildSelectedRoute() {
     const routeRestaurants = [];
 
     for (let id of selectedIds) {
-        const restaurant = restaurants.find(r => r.id === id);
+        // ИСПРАВЛЕНО: нестрогое равенство (==), чтобы типы данных не конфликтовали
+        const restaurant = restaurants.find(r => r.id == id);
         const rCoords = ensureArrayCoords(coordsCache[id]);
         if (rCoords && restaurant) {
             points.push(rCoords);
@@ -2744,13 +2746,12 @@ function buildSelectedRoute() {
         return;
     }
 
-    // Очищаем старый путь и скрываем маркеры общего списка
     clearBuiltRoute();
     if (geoCollection) geoCollection.removeAll();
+    if (targetMarkersCollection) targetMarkersCollection.removeAll(); // Очищаем старые маркеры маршрута
 
     previousTab = 'services';
 
-    // Создаем линию пути
     activeMultiRoute = new ymaps.Polyline(points, {
         balloonContent: "Ваш экскурсионный гастро-маршрут"
     }, {
@@ -2760,10 +2761,10 @@ function buildSelectedRoute() {
         strokeStyle: 'shortdash'
     });
 
+    // ИСПРАВЛЕНО: используем переменную map, которая инициализирована в твоем коде
     if (map) {
         map.geoObjects.add(activeMultiRoute);
 
-        // Добавляем поинты (маркеры) только для выбранных ресторанов в targetMarkersCollection
         routeRestaurants.forEach(r => {
             const coords = ensureArrayCoords(coordsCache[r.id]);
             if (coords) {
@@ -2776,9 +2777,9 @@ function buildSelectedRoute() {
                 });
                 targetMarkersCollection.add(pm);
             }
+            map.geoObjects.add(targetMarkersCollection);
         });
 
-        // Фокусировка
         map.setBounds(activeMultiRoute.geometry.getBounds(), {
             checkZoomRange: true,
             zoomMargin: 50
