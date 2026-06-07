@@ -74,7 +74,7 @@ const restaurants = [
         dishes: "Стейк из стерляди, пельмени с косулей, запеченный камамбер с брусничным соусом",
         style: "Панорамная терраса у набережной реки Туры",
         description: "Видовой ресторан на набережной. Сочетает локальные сибирские продукты с европейскими технологиями приготовления.",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/steak_with_tomato.avif",
         link: "https://visittyumen.ru/places/caf-15-86/"
     },
     {
@@ -90,7 +90,7 @@ const restaurants = [
         dishes: "Плато морепродуктов, уха из северных рыб, запеченный лобстер",
         style: "Классический премиальный интерьер",
         description: "Один из старейших рыбных ресторанов города со строгим премиальным обслуживанием.",
-        image: "https://arriah.ru/upload/iblock/6ff/hltnfuhemc7vonzht33l8wvwfldu9mlw.jpg",
+        image: "detail_photo/seafood.jpg",
         link: "https://visittyumen.ru/places/restoran-poseydon/"
     },
     {
@@ -106,7 +106,7 @@ const restaurants = [
         dishes: "Строганина на ледяной глыбе, стейк из оленины, морошка с кедровыми орехами",
         style: "Музейный интерьер с элементами быта народов Севера",
         description: "Уникальный ресторан-музей, где можно попробовать настоящую кухню северных народов в аутентичной обстановке.",
-        image: "https://images.unsplash.com/photo-1574926053821-79c5e338a933?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/spaghetti_with_yolk.avif",
         link: "https://visittyumen.ru/places/restoran-muzey-chum/"
     },
     {
@@ -122,7 +122,7 @@ const restaurants = [
         dishes: "Борщ с пампушками, пожарские котлеты, блины с красной рыбой",
         style: "Элегантный классический интерьер",
         description: "Ресторан традиционной русской и советской кухни в современном кулинарном прочтении.",
-        image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad.avif",
         link: "https://visittyumen.ru/places/restoratsiya-vostok/"
     },
     {
@@ -138,7 +138,7 @@ const restaurants = [
         dishes: "Блюда на гриле, запеченная местная рыба, лесные десерты",
         style: "Загородный эко-стиль с панорамными окнами",
         description: "Уютный ресторан на территории экопарка. Отличное место для семейного обеда на лоне сибирской природы.",
-        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/black_rest.avif",
         link: "https://visittyumen.ru/places/restokholl-polyanka-caf-v-ekoparke-tayga/"
     },
     {
@@ -154,7 +154,7 @@ const restaurants = [
         dishes: "Салат с хрустящими баклажанами, утиная грудка с ягодным соусом",
         style: "Современный лофт с обилием живой зелени",
         description: "Стильное городское заведение с понятной и вкусной европейской кухней и авторскими коктейлями.",
-        image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salmon.avif",
         link: "https://visittyumen.ru/places/restoran-myata/"
     },
     {
@@ -170,7 +170,7 @@ const restaurants = [
         dishes: "Купеческие разносолы, запеченный поросенок, домашние настойки",
         style: "Атмосфера купеческого дома XIX века",
         description: "Ресторан расположен в историческом особняке и специализируется на воссоздании рецептов купеческой Тюмени.",
-        image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/red_rest.avif",
         link: "https://visittyumen.ru/places/restoran-potaskuy/"
     },
     {
@@ -186,7 +186,7 @@ const restaurants = [
         dishes: "Хинкали с телятиной, хачапури по-аджарски, шашлык на углях",
         style: "Колоритный грузинский интерьер с домашним уютом",
         description: "Традиционное кавказское гостеприимство, открытая кухня и обилие мясных национальных блюд.",
-        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad_1.avif",
         link: "https://visittyumen.ru/places/restoran-gruzinskoy-kukhni-katso/"
     },
     {
@@ -202,7 +202,7 @@ const restaurants = [
         dishes: "Тартар из косули, голубцы с гусем, запеченный муксун",
         style: "Высокий дизайн с сибирским характером",
         description: "Премиальный ресторан традиционной и новой северной кухни от известного ресторатора Дениса Иванова.",
-        image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/pizza.avif",
         link: "https://visittyumen.ru/places/restoran-sibirsibir/"
     },
     {
@@ -218,7 +218,7 @@ const restaurants = [
         dishes: "Брискет из коптильни, свиные ребра BBQ, сочные бургеры",
         style: "Брутальный крафтовый интерьер",
         description: "Мясное заведение с упором на правильное копчение и приготовление стейков на открытом огне.",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/steak_with_tomato.avif",
         link: "https://visittyumen.ru/places/gril-bar-sedlo/"
     },
     {
@@ -234,7 +234,7 @@ const restaurants = [
         dishes: "Пхали, сациви с курицей, люля-кебаб из баранины",
         style: "Простой, душевный кавказский интерьер",
         description: "Небольшое, но очень популярное семейное кафе с доступными ценами на классические кавказские специалитеты.",
-        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad_1.avif",
         link: "https://visittyumen.ru/places/kafe-chito-grito/"
     },
     {
@@ -250,7 +250,7 @@ const restaurants = [
         dishes: "Стерлядь по-царски, запеченная утка с яблоками, блины с икрой",
         style: "Аристократичный интерьер в стиле русского барокко",
         description: "Панорамный ресторан русской кухни на верхнем этаже отеля, воссоздающий атмосферу и вкусы дворянских застолий.",
-        image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/red_rest.avif",
         link: "https://visittyumen.ru/places/restoran-remezov/"
     },
     {
@@ -266,7 +266,7 @@ const restaurants = [
         dishes: "Завтраки весь день, нежные сырники, паста с цыпленком",
         style: "Светлый, эстетичный скандинавский дизайн",
         description: "Уютное городское пространство для душевных разговоров, семейных обедов и эстетичных завтраков.",
-        image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/cafe.avif",
         link: "https://visittyumen.ru/places/semeynoe-kafe-razgovory/"
     },
     {
@@ -282,7 +282,7 @@ const restaurants = [
         dishes: "Салат с креветками и манго, стейк из свиной шеи, авторские роллы",
         style: "Современный неоновый лофт",
         description: "Ресторан, работающий по системе True Cost — вход платный, а все блюда и напитки по себестоимости.",
-        image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salmon.avif",
         link: "https://visittyumen.ru/places/gastrobar-legkiy-chek/"
     },
     {
@@ -298,7 +298,7 @@ const restaurants = [
         dishes: "Бургер с рваной говядиной, крылышки Баффало, картофель фри с трюфельным соусом",
         style: "Современный паб с огромной пивной колонной",
         description: "Культовое барное место с колоссальным выбором крафтового пива со всего мира и отличным стритфудом.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/kraftovyy-pab-top-hop/"
     },
     {
@@ -314,7 +314,7 @@ const restaurants = [
         dishes: "Хачапури по-имеретински, шашлык из баранины, оджахури",
         style: "Традиционный кавказский интерьер с обилием глиняной посуды",
         description: "Большой и просторный ресторан грузинской кухни, известный своими щедрыми порциями и сочным мясом.",
-        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad_1.avif",
         link: "https://visittyumen.ru/places/gruzinskiy-restoran-chito-didi/"
     },
     {
@@ -330,7 +330,7 @@ const restaurants = [
         dishes: "Плов из баранины, казан-кебаб, долма, восточные сладости",
         style: "Роскошный восточный интерьер с узорами и шелком",
         description: "Ресторан аутентичной восточной кухни с глубоким уважением к среднеазиатским традициям гостеприимства.",
-        image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/gyoza.avif",
         link: "https://visittyumen.ru/places/restoran-ayva/"
     },
     {
@@ -346,7 +346,7 @@ const restaurants = [
         dishes: "Суточные щи из печи, грузди со сметаной, пироги со стерлядью",
         style: "Стилизованная деревянная русская изба",
         description: "Классический русский ресторан, специализирующийся на старославянских рецептах кулинарии.",
-        image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad.avif",
         link: "https://visittyumen.ru/places/restoran-gornitsa/"
     },
     {
@@ -362,7 +362,7 @@ const restaurants = [
         dishes: "Ризотто с морепродуктами, домашняя паста, тирамису",
         style: "Светлый классический средиземноморский интерьер",
         description: "Уютный ресторан с уклоном в итальянские гастрономические традиции и средиземноморские морепродукты.",
-        image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/cafe.avif",
         link: "https://visittyumen.ru/places/italyanskiy-restoran-sorrento/"
     },
     {
@@ -378,7 +378,7 @@ const restaurants = [
         dishes: "Сет мини-бургеров, тартар на чипсах, крафтовые настойки",
         style: "Приглушенный свет, концептуальный спикизи-бар",
         description: "Камерный скрытый бар с сильной коктейльной картой и атмосферой приватности.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/bar-inkognito/"
     },
     {
@@ -394,7 +394,7 @@ const restaurants = [
         dishes: "Осьминог с картофельным муссом, утиное филе с инжиром",
         style: "Элегантный премиум-дизайн с панорамными стеклами",
         description: "Концептуальный авторский ресторан высокой кухни с живой музыкой и утонченной атмосферой.",
-        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/black_rest.avif",
         link: "https://visittyumen.ru/places/restoran-a-point-live/"
     },
     {
@@ -410,7 +410,7 @@ const restaurants = [
         dishes: "Сытные вафли со скремблом и лососем, сладкие вафли с ягодами",
         style: "Яркий молодежный скандинавский интерьер",
         description: "Специализированное стритфуд-кафе, где основой каждого сытного или сладкого блюда выступает шпинатная, томатная или классическая вафля.",
-        image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/taco.avif",
         link: "https://visittyumen.ru/places/kafe-vaffel/"
     },
     {
@@ -426,7 +426,7 @@ const restaurants = [
         dishes: "Суп из оленины, уха из нельмы, пироги с таежными ягодами",
         style: "Сдержанный этно-интерьер северного края",
         description: "Семейное кафе традиционной локальной кухни, специализирующееся на продуктах Ямало-Ненецкого автономного округа.",
-        image: "https://images.unsplash.com/photo-1574926053821-79c5e338a933?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/spaghetti_with_yolk.avif",
         link: "https://visittyumen.ru/places/kafe-yamal/"
     },
     {
@@ -442,7 +442,7 @@ const restaurants = [
         dishes: "Утка по-пекински, свинина в кисло-сладком соусе, димсамы",
         style: "Аутентичный азиатский неон и темные тона",
         description: "Ресторан паназиатской и классической китайской кухни со строгим соблюдением восточных рецептур.",
-        image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/baozi.avif",
         link: "https://visittyumen.ru/places/restoran-panaziatskoy-kukhni-china/"
     },
     {
@@ -458,7 +458,7 @@ const restaurants = [
         dishes: "Плов праздничный, манты с бараниной, шурпа, лагман",
         style: "Восточные ковры, орнаменты и мягкие топчаны",
         description: "Ресторан сытной и душевной узбекской кухни для больших семейных застолий.",
-        image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/gyoza.avif",
         link: "https://visittyumen.ru/places/restoran-domashney-kukhni-uzbechka/"
     },
     {
@@ -474,7 +474,7 @@ const restaurants = [
         dishes: "Хрустящие тако с лососем, авторские эклеры с несладкими начинками",
         style: "Модный функциональный минимализм",
         description: "Трендовое гастрономическое пространство с необычными сочетаниями вкусов и яркой подачей.",
-        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/black_rest.avif",
         link: "https://visittyumen.ru/places/gastrobistro-tehnikum/"
     },
     {
@@ -490,7 +490,7 @@ const restaurants = [
         dishes: "Круассаны на сливочном масле, ремесленный хлеб, спешелти кофе",
         style: "Светлый скандинавский интерьер с запахом свежего хлеба",
         description: "Уютная городская кондитерская-пекарня, идеальная для утреннего завтрака и чашки кофе.",
-        image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/coffee.avif",
         link: "https://visittyumen.ru/places/kofeynya-pekarnya-koffein/"
     },
     {
@@ -506,7 +506,7 @@ const restaurants = [
         dishes: "Капучино по-итальянски, панини с моцареллой, римская мини-пицца",
         style: "Элегантный средиземноморский кофейный уголок",
         description: "Спокойная городская кофейня с акцентом на классическую итальянскую обжарку зерен и свежие закуски.",
-        image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/coffee_1.avif",
         link: "https://visittyumen.ru/places/kofeynya-palermo-caffe-casa/"
     },
     {
@@ -522,7 +522,7 @@ const restaurants = [
         dishes: "Раф «Таро», латте с лавандой, муссовые пирожные",
         style: "Мистический интерьер с элементами астрологии и карт",
         description: "Концептуальное кофейное заведение с загадочной эстетикой, где к каждому напитку можно вытянуть метафорическую карту.",
-        image: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/coffee_2.avif",
         link: "https://visittyumen.ru/places/kofeynya-karty-govoryat/"
     },
     {
@@ -538,7 +538,7 @@ const restaurants = [
         dishes: "Тартар из лосося с авокадо, утиная ножка конфи, коктейльная карта",
         style: "Минималистичный урбанистический дизайн",
         description: "Стильный гастробар, ориентированный на живое общение, изысканные мясные блюда и авторское барное меню.",
-        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/black_rest.avif",
         link: "https://visittyumen.ru/places/gastrobar-talk/"
     },
     {
@@ -554,7 +554,7 @@ const restaurants = [
         dishes: "Строганина из муксуна, жаркое в горшочке из кабана, настойки кустарного производства",
         style: "Дворянский особняк с резной мебелью",
         description: "Ресторан исторической русской кухни, воссоздающий атмосферу купеческих трапез старой Сибири.",
-        image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/red_rest.avif",
         link: "https://visittyumen.ru/places/restoran-nasledie/"
     },
     {
@@ -570,7 +570,7 @@ const restaurants = [
         dishes: "Шашлык из вырезки ягненка, чучвара шурпа, самса из тандыра",
         style: "Теплый колоритный оазис с мягкими диванами",
         description: "Просторное заведение с традиционной среднеазиатской кухней, каноничным пловом и открытым мангалом.",
-        image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/gyoza.avif",
         link: "https://visittyumen.ru/places/restoran-barkhan/"
     },
     {
@@ -586,7 +586,7 @@ const restaurants = [
         dishes: "Люля-кебаб птицы, садж с говядиной, пахлава ручной работы",
         style: "Атмосфера сказок «Тысячи и одной ночи»",
         description: "Сет-ресторан восточной кулинарии, названный в честь великого поэта, с широким ассортиментом мясных шедевров.",
-        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad_1.avif",
         link: "https://visittyumen.ru/places/set-restoranov-omar-khayyam/"
     },
     {
@@ -602,7 +602,7 @@ const restaurants = [
         dishes: "Трюфели ручной работы, горячий шоколад, фигурные плитки",
         style: "Изящный французский бутик-дизайн",
         description: "Авторское кондитерское ателье шоколада, специализирующееся на элитных сладостях и кофе ручной работы.",
-        image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/coffee.avif",
         link: "https://visittyumen.ru/places/shokoladnoe-atele-marina-koroleva/"
     },
     {
@@ -618,7 +618,7 @@ const restaurants = [
         dishes: "Феттуччини с грибами, лазанья классическая, пицца Четыре сыра",
         style: "Домашний семейный итальянский трактир",
         description: "Классический итальянский уголок с упором на традиционные макаронные изделия ручной лепки.",
-        image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/cafe.avif",
         link: "https://visittyumen.ru/places/restoran-italyanskoy-kukhni-pasta-femili/"
     },
     {
@@ -634,7 +634,7 @@ const restaurants = [
         dishes: "Тартин на закваске, круассан миндальный, фильтр-кофе",
         style: "Уютный крафтовый эко-стиль пекарни",
         description: "Ремесленная кондитерская-пекарня полного цикла, известная выпечкой хлеба старинными методами.",
-        image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/coffee.avif",
         link: "https://visittyumen.ru/places/remeslennaya-pekarnya-istorii-khleba/"
     },
     {
@@ -650,7 +650,7 @@ const restaurants = [
         dishes: "Тартар из телятины с трюфелем, филе-миньон, винная коллекция",
         style: "Строгий аристократический неоклассицизм",
         description: "Элитный гастрономический проект с авторской концепцией европейских кулинарных канонов.",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/steak_with_tomato.avif",
         link: "https://visittyumen.ru/places/restoran-principle/"
     },
     {
@@ -666,7 +666,7 @@ const restaurants = [
         dishes: "Хоровац на углях, долма в виноградных листьях, национальный хлеб матнакаш",
         style: "Каменный кавказский интерьер с элементами армянского быта",
         description: "Семейное заведение кавказской кухни, воспевающее традиционные рецепты армянских матерей.",
-        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad_1.avif",
         link: "https://visittyumen.ru/places/restoran-armyanskoy-kukhni-mayrik/"
     },
     {
@@ -682,7 +682,7 @@ const restaurants = [
         dishes: "Паста карбонара с гуанчале, равиоли с рикоттой, брускетты с томатами",
         style: "Современная городская итальянская остерия",
         description: "Итальянский ресторан с легкой средиземноморской концепцией, свежей зеленью и домашней пастой.",
-        image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/cafe.avif",
         link: "https://visittyumen.ru/places/restoran-pasta-salsa-osteria/"
     },
     {
@@ -698,7 +698,7 @@ const restaurants = [
         dishes: "Том ям, лапша вок с говядиной, острые азиатские крылья",
         style: "Гонконгский уличный неон, стиль лофт-азия",
         description: "Уникальное сочетание азиатской бистро-кухни и крафтовой пивоварни с яркими восточными мотивами.",
-        image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/baozi.avif",
         link: "https://visittyumen.ru/places/aziatskaya-birovarnya-brew-s-lee/"
     },
     {
@@ -714,7 +714,7 @@ const restaurants = [
         dishes: "Крем-суп из шампиньонов, медальоны из свинины, венский шницель",
         style: "Сдержанный деловой европейский стиль",
         description: "Ресторан классического формата со спокойной музыкой и проверенными временем европейскими блюдами.",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/steak_with_tomato.avif",
         link: "https://visittyumen.ru/places/restoran-radis/"
     },
     {
@@ -730,7 +730,7 @@ const restaurants = [
         dishes: "Бутерброды с салом и селедкой, таежные настойки на ягодах",
         style: "Атмосфера сибирской интеллигентной рюмочной",
         description: "Концептуальный бар русских напитков и настоек, вдохновленный наследием великого ученого Менделеева.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/sibirskiy-bar-russkikh-napitkov-d-ivanovich-v-tyumeni/"
     },
     {
@@ -746,7 +746,7 @@ const restaurants = [
         dishes: "Гренки чесночные, фирменный бургер «Гараж», картофельные дольки",
         style: "Гаражный ретро-дизайн, автомобильная атрибутика",
         description: "Драйвовый тематический бар для неформального отдыха с друзьями, спортивных трансляций и пенного.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/bar-ale-garazh/"
     },
     {
@@ -762,7 +762,7 @@ const restaurants = [
         dishes: "Пицца на тонком тесте, домашние равиоли, брускетта с прошутто",
         style: "Небольшая уютная семейная траттория",
         description: "Гастрономическая мастерская, воссоздающая атмосферу уютных пиццерий на юге Италии.",
-        image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/cafe.avif",
         link: "https://visittyumen.ru/places/gastronomicheskaya-masterskaya-sinor-dzhovanni/"
     },
     {
@@ -778,7 +778,7 @@ const restaurants = [
         dishes: "Салат со страчателлой и томатами, паста в сырной голове, буррата",
         style: "Светлый лофт с элементами сыроваренного ремесла",
         description: "Локальный гастрономический проект с собственной мастерской по изготовлению мягких итальянских сыров.",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/steak_with_tomato.avif",
         link: "https://visittyumen.ru/places/masterskaya-syra-strachatelli/"
     },
     {
@@ -794,7 +794,7 @@ const restaurants = [
         dishes: "Форшмак, бутерброды со шпротами, сет крафтовых настоек",
         style: "Советский ретро-минимализм рюмочной",
         description: "Концептуальное барное пространство с ностальгической советской эстетикой и качественными настойками.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/sibirskaya-ryumochnaya-pravda/"
     },
     {
@@ -810,7 +810,7 @@ const restaurants = [
         dishes: "Горячие пышки в сахарной пудре, какао со сгущенкой",
         style: "Советский винтажный интерьер кондитерской",
         description: "Ностальгическое городское мини-кафе, где выпекают классические пышки по традиционным рецептам.",
-        image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/coffee.avif",
         link: "https://visittyumen.ru/places/pyshechnaya/"
     },
     {
@@ -826,7 +826,7 @@ const restaurants = [
         dishes: "Круассан Бенедикт, Блинный торт с матчей, кофейная классика",
         style: "Ультрасовременный пастельный минимализм",
         description: "Стильное городское бистро с упором на изящную подачу авторских десертов и бранчи.",
-        image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/coffee_1.avif",
         link: "https://visittyumen.ru/places/set-kofeen-bistro-tonko/"
     },
     {
@@ -842,7 +842,7 @@ const restaurants = [
         dishes: "Стейк из лосося, утиная грудка су-вид, премиальные вина",
         style: "Классический театральный интерьер",
         description: "Премиум-ресторан при отеле с торжественной атмосферой, идеальный для банкетов и ужинов.",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/steak_with_tomato.avif",
         link: "https://visittyumen.ru/places/opera-restaurant/"
     },
     {
@@ -858,7 +858,7 @@ const restaurants = [
         dishes: "Фирменное пиво Ермолаев, колбаски собственного производства, чесночные гренки",
         style: "Стилизованный советский деревенский бар",
         description: "Народный пивной бар с демократичной атмосферой и линейкой локального крафтового пива.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/bar-selsovet-ermolaev/"
     },
     {
@@ -874,7 +874,7 @@ const restaurants = [
         dishes: "Свиное колено, сибирские пельмени, домашнее сало, живое пиво",
         style: "Традиционный купеческий трактир из дерева",
         description: "Сытная русская и сибирская кухня в сочетании с собственной пивоваренной картой бренда Ермолаев.",
-        image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad.avif",
         link: "https://visittyumen.ru/places/traktir-ermolaev/"
     },
     {
@@ -890,7 +890,7 @@ const restaurants = [
         dishes: "Запеченный муксун, филе говядины со сморчками, десерты",
         style: "Светлый элегантный классический стиль",
         description: "Изысканный ресторан авторской кухни с видом на историческую часть города у реки.",
-        image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/red_rest.avif",
         link: "https://visittyumen.ru/places/restoratsiya-avgust/"
     },
     {
@@ -906,7 +906,7 @@ const restaurants = [
         dishes: "Крылья BBQ, пивные сеты на компанию, бургеры",
         style: "Спортивный бар со стадионной атрибутикой",
         description: "Главная точка притяжения для любителей спортивных трансляций с отличным разливным пивом.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/bar-ermolaev-sportkomitet/"
     },
     {
@@ -922,7 +922,7 @@ const restaurants = [
         dishes: "Стейк рибай, свиные ребра в глазури, фирменное фильтрованное",
         style: "Милитари-стилистика, массивные столы",
         description: "Брутальный гриль-паб для ценителей хорошего мяса на углях и классических сортов пива.",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/steak_with_tomato.avif",
         link: "https://visittyumen.ru/places/gril-pab-genshtab-ermolaev/"
     },
     {
@@ -938,7 +938,7 @@ const restaurants = [
         dishes: "Пицца Маргарита, спагетти с морепродуктами, панна котта",
         style: "Классическая залитая светом пиццерия",
         description: "Традиционный ресторан итальянской кухни с семейной атмосферой в центре Тюмени.",
-        image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/cafe.avif",
         link: "https://visittyumen.ru/places/restoran-italyanskoy-kukhni-pyatstsa/"
     },
     {
@@ -954,7 +954,7 @@ const restaurants = [
         dishes: "Бургер «Кубанский пижон», бургер «Федор», сырные палочки",
         style: "Стильный южный уличный лофт",
         description: "Крафтовая бургерная лавка с огромными многоэтажными бургерами и уникальными авторскими соусами.",
-        image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/taco.avif",
         link: "https://visittyumen.ru/places/burgernaya-krasnodarskiy-paren/"
     },
     {
@@ -970,7 +970,7 @@ const restaurants = [
         dishes: "Копченый брискет, брискет-бургер, стейки сухого вызревания",
         style: "Индустриальный лофт с огромным открытым огненным цехом",
         description: "Уникальный мясной ресторан, специализирующийся на технологии открытого огня и длительного копчения мяса.",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/steak_with_tomato.avif",
         link: "https://visittyumen.ru/places/restoran-goryachiy-tsekh/"
     },
     {
@@ -986,7 +986,7 @@ const restaurants = [
         dishes: "Фильтр-кофе, бенедикт с лососем, панкейки с черникой",
         style: "Эстетичный лаконичный минимализм",
         description: "Стильное городское пространство для истинных ценителей качественной кофейной альтернативы и поздних завтраков.",
-        image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/coffee_1.avif",
         link: "https://visittyumen.ru/places/gorodskaya-kofeynya-kofe-bryut/"
     },
     {
@@ -1002,7 +1002,7 @@ const restaurants = [
         dishes: "Мидии в сырном соусе в кастрюльке, хрустящий багет, устрицы",
         style: "Уличный морской прибрежный концепт",
         description: "Популярный ресторан стрит-фуд формата морепродуктов, визитной карточкой которого являются кастрюльки свежих мидий в соусах.",
-        image: "https://arriah.ru/upload/iblock/6ff/hltnfuhemc7vonzht33l8wvwfldu9mlw.jpg",
+        image: "detail_photo/seafood.jpg",
         link: "https://visittyumen.ru/places/restoran-moreproduktov-midiynoe-mesto/"
     },
     {
@@ -1018,7 +1018,7 @@ const restaurants = [
         dishes: "Луковый суп, улитки эскарго, крем-брюле, игристые вина",
         style: "Утонченный парижский шик",
         description: "Элегантный ресторан французской гастрономической эстетики и классических европейских традиций.",
-        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/black_rest.avif",
         link: "https://visittyumen.ru/places/restoran-frantsuzskoy-kukhni-cremant/"
     },
     {
@@ -1034,7 +1034,7 @@ const restaurants = [
         dishes: "Пирожное Павлова, фисташковый рулет, раф карамель",
         style: "Милый десертный кукольный интерьер",
         description: "Семейная уютная кондитерская, славящаяся своими натуральными праздничными тортами и пирожными.",
-        image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/coffee.avif",
         link: "https://visittyumen.ru/places/kofeynya-tortobelka/"
     },
     {
@@ -1050,7 +1050,7 @@ const restaurants = [
         dishes: "Хачапури по-аджарски лодочка, хинкали сочные, люля из цыпленка",
         style: "Современный теплый кавказский интерьер с глиняными печами",
         description: "Атмосферное и всегда оживленное заведение с акцентом на выпечку каноничных грузинских хачапури.",
-        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad_1.avif",
         link: "https://visittyumen.ru/places/gruzinskiy-restoranchik-khochu-puri/"
     },
     {
@@ -1066,7 +1066,7 @@ const restaurants = [
         dishes: "Свиные уши к пиву, бургер острый, картофельные вафли",
         style: "Минималистичный барный тап-рум с кранами пива",
         description: "Фирменный дегустационный зал пивоварни Ермолаев с самым свежим розливом экспериментальных сортов.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/taprum-ermolaev/"
     },
     {
@@ -1082,7 +1082,7 @@ const restaurants = [
         dishes: "Хинкали с сыром, чахохбили, шашлык из свиной шеи, чача",
         style: "Грузинский колоритный дом, много ковров и зелени",
         description: "Ресторан душевного кавказского гостеприимства с классическими многовековыми рецептами.",
-        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad_1.avif",
         link: "https://visittyumen.ru/places/dom-gruzinskoy-kukhni-sami-susami/"
     },
     {
@@ -1098,7 +1098,7 @@ const restaurants = [
         dishes: "Сковородка от мамы, коктейли «Алешка» и «Досвидос»",
         style: "Ностальгический интерьер эпохи 90-х и нулевых",
         description: "Легендарный танцевальный караоке-бар Сергея Жукова с атмосферой дискотек нашей молодости.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/bar-ruki-vverkh/"
     },
     {
@@ -1114,7 +1114,7 @@ const restaurants = [
         dishes: "Коктейли в необычной посуде, стейк-салат, ребра барбекю",
         style: "Уютный винтажный барный концепт с английским характером",
         description: "Один из лучших коктейльных баров города с сильной командой барменов и уникальной миксологией.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/granny-s-bar/"
     },
     {
@@ -1130,7 +1130,7 @@ const restaurants = [
         dishes: "Ризотто с грибами, равиоли с лососем, пицца на пышном тесте",
         style: "Теплый семейный итальянский дом",
         description: "Уютный ресторан европейско-итальянской кухни с большой детской игровой комнатой.",
-        image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/cafe.avif",
         link: "https://visittyumen.ru/places/semeynyy-restoran-mesto-gusto/"
     },
     {
@@ -1146,7 +1146,7 @@ const restaurants = [
         dishes: "Бутерброд с килькой, настойка облепиха, домашние пельмени",
         style: "Винтажный медицинский аптечный ретро-стиль рюмочной",
         description: "Ироничный бар-рюмочная с концептуальными настойками «для поправки здоровья» и советскими закусками.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/bar-zdorove/"
     },
     {
@@ -1162,7 +1162,7 @@ const restaurants = [
         dishes: "Эспрессо-тоник, сырники из фермерского творога, овсяная каша с манго",
         style: "Яркий урбанистический минимализм",
         description: "Современная городская спешелти-кофейня, популярная среди фрилансеров и любителей минимализма.",
-        image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/coffee_1.avif",
         link: "https://visittyumen.ru/places/kofeynya-optimist-coffee-/"
     },
     {
@@ -1178,7 +1178,7 @@ const restaurants = [
         dishes: "Фирменный торт «Максим», круассан со скремблом, раф сибирский",
         style: "Классический кофейный интерьер в историческом особняке",
         description: "Флагманская историческая кофейня старейшей ресторанной сети города с авторскими тортами.",
-        image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/coffee.avif",
         link: "https://visittyumen.ru/places/istoricheskaya-gastrokofeynya-maksim/"
     },
     {
@@ -1194,7 +1194,7 @@ const restaurants = [
         dishes: "Стерлядь запеченная целиком, заливное, мясные купеческие нарезки",
         style: "Пышное русское барокко, хрусталь и позолота",
         description: "Торжественный банкетный ресторан премиум-класса для пышных исторических свадеб и юбилеев.",
-        image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/red_rest.avif",
         link: "https://visittyumen.ru/places/banketnyy-restoran-dvoryanskoe-gnezdo/"
     },
     {
@@ -1210,7 +1210,7 @@ const restaurants = [
         dishes: "Картофель фри с сырным муссом, авторские коктейли на джине",
         style: "Приглушенный неоновый свет, современная музыка",
         description: "Популярный молодежный ночной бар с танцевальной зоной и концептуальной картой лонг-дринков.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/bar-budu-pozdno/"
     },
     {
@@ -1226,7 +1226,7 @@ const restaurants = [
         dishes: "Салат с хрустящей уткой, стейк мясной, крем-суп тыквенный",
         style: "Деловой современный ресторанный интерьер",
         description: "Городской ресторан в центре Тюмени, ориентированный на бизнес-ланчи и комфортные ужины.",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/steak_with_tomato.avif",
         link: "https://visittyumen.ru/places/restoran-blizhe-k-delu/"
     },
     {
@@ -1242,7 +1242,7 @@ const restaurants = [
         dishes: "Боул с авокадо и тофу, веган-бургер, смузи детокс",
         style: "Эко-минимализм, обилие растений и светлого дерева",
         description: "Концептуальное зеленое кафе здорового и сбалансированного питания с авторскими позициями.",
-        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad_1.avif",
         link: "https://visittyumen.ru/places/kafe-green/"
     },
     {
@@ -1258,7 +1258,7 @@ const restaurants = [
         dishes: "Раф сибирский с кедровым орехом, банановый кекс, флэт уайт",
         style: "Светлый лофт с зелеными растениями",
         description: "Популярная сеть городских спешелти-кофеен с высоким стандартом обжарки и заваривания кофе.",
-        image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/coffee_1.avif",
         link: "https://visittyumen.ru/places/kofeynya-garden/"
     },
     {
@@ -1274,7 +1274,7 @@ const restaurants = [
         dishes: "Ирландское рагу, фиш энд чипс, бургер с беконом",
         style: "Классический аутентичный ирландский паб из темного дуба",
         description: "Шумный сетевой ирландский паб со спортивными трансляциями и рок-н-ролльным духом.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/harat-s-pub/"
     },
     {
@@ -1290,7 +1290,7 @@ const restaurants = [
         dishes: "Тартар на поджаренном бриоше, авторские коктейли на травах",
         style: "Арт-интерьер с картинами местных художников",
         description: "Концептуальный бар-кухня, объединяющий современное искусство, гастрономию и коктейли.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/bar-s-kukhney-tvorchestvo/"
     },
     {
@@ -1306,7 +1306,7 @@ const restaurants = [
         dishes: "Грудка утки со свеклой, паштет из печени косули с брусникой",
         style: "Темный суровый скандинавский минимализм",
         description: "Стильный нордический гастробар с локальными продуктами в сложной авторской интерпретации.",
-        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/black_rest.avif",
         link: "https://visittyumen.ru/places/gastrobar-mestia/"
     },
     {
@@ -1322,7 +1322,7 @@ const restaurants = [
         dishes: "Стейк мясной на гриле, креветки васаби, коктейли",
         style: "Индустриальный кирпичный исторический лофт",
         description: "Стильный ресторан на набережной Туры, объединяющий авторское меню и ночную барную карту.",
-        image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salmon.avif",
         link: "https://visittyumen.ru/places/restobar-kontora/"
     },
     {
@@ -1338,7 +1338,7 @@ const restaurants = [
         dishes: "Мясная тарелка Средиземья, бургер Хоббита, крафтовое пиво",
         style: "Фэнтезийный сказочный стиль по мотивам Толкина",
         description: "Атмосферный паб, полностью воссоздающий внутреннее убранство домика хоббита из Шира.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/pab-hobbit-hall/"
     },
     {
@@ -1354,7 +1354,7 @@ const restaurants = [
         dishes: "Нью-Йоркский стейк, крылья в остром соусе, бургер с беконом",
         style: "Нью-Йоркский традиционный кирпичный паб",
         description: "Классическое американское барное пространство в Тюмени с упором на стейки и импортное пенное.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/big-apple-pub/"
     },
     {
@@ -1370,7 +1370,7 @@ const restaurants = [
         dishes: "Коктейли «Над пропастью во ржи», тартар мясной, паштеты",
         style: "Литературный интеллектуальный лофт, приглушенный свет",
         description: "Атмосферный концептуальный бар с упором на интеллектуальную миксологию и культуру спикизи.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/bar-j-d-salinger/"
     },
     {
@@ -1386,7 +1386,7 @@ const restaurants = [
         dishes: "Тако со свининой пастор, кесадилья, классическая маргарита",
         style: "Яркий мексиканский колорит со скрытым баром",
         description: "Камерный концептуальный бар с латиноамериканской атмосферой, мексиканским стритфудом и текилой.",
-        image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/taco.avif",
         link: "https://visittyumen.ru/places/meksikanskiy-bar-fresca-/"
     },
     {
@@ -1402,7 +1402,7 @@ const restaurants = [
         dishes: "Плов свадебный, самса с рубленой говядиной, лагман уйгурский",
         style: "Восточные ткани, пестрые узоры и уютные кабинки",
         description: "Большая традиционная чайхана для сытного кавказского и среднеазиатского обеда всей семьей.",
-        image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/gyoza.avif",
         link: "https://visittyumen.ru/places/chaykhana-pavlin/"
     },
     {
@@ -1418,7 +1418,7 @@ const restaurants = [
         dishes: "Люля-кебаб из телятины, кутабы с зеленью, садж мясной",
         style: "Классический кавказско-восточный узорчатый ресторан",
         description: "Ресторан домашней кавказской и среднеазиатской кулинарии с каноничным казан-кебабом на углях.",
-        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad_1.avif",
         link: "https://visittyumen.ru/places/restoran-kishmish/"
     },
     {
@@ -1434,7 +1434,7 @@ const restaurants = [
         dishes: "Сендвич в круассане, краффин с кремом, латте соленая карамель",
         style: "Европейский современный минималистичный интерьер пекарни",
         description: "Стильная ремесленная кондитерская с широким ассортиментом слоеного теста и утреннего фильтр-кофе.",
-        image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/coffee.avif",
         link: "https://visittyumen.ru/places/kofeynya-pekarnya-bake-up/"
     },
     {
@@ -1450,7 +1450,7 @@ const restaurants = [
         dishes: "Тонкоцу рамен с бужениной, сякэ дон, онигири с лососем",
         style: "Японский стрит-киоск, аниме-атрибутика",
         description: "Уютное тематическое азиатское бистро, специализирующееся на варке наваристых традиционных японских раменов.",
-        image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/baozi.avif",
         link: "https://visittyumen.ru/places/bistro-dragon-s-ramen/"
     },
     {
@@ -1466,7 +1466,7 @@ const restaurants = [
         dishes: "Том ям с креветками разной остроты, фо бо, вок с морепродуктами",
         style: "Современный паназиатский неон-лофт",
         description: "Специализированный ресторан паназиатской кухни, знаменитый культовым супом том ям.",
-        image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/baozi.avif",
         link: "https://visittyumen.ru/places/restoran-tomyumbar/"
     },
     {
@@ -1482,7 +1482,7 @@ const restaurants = [
         dishes: "Торт «Эстерхази», эклеры ванильные, авторский латте",
         style: "Пастельный французский кофейный салон",
         description: "Камерная городская кондитерская лавка с богатой картой десертов ручной работы на натуральных сливках.",
-        image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/coffee.avif",
         link: "https://visittyumen.ru/places/kofeynya-konditerskaya-tortsher/"
     },
     {
@@ -1498,7 +1498,7 @@ const restaurants = [
         dishes: "Хинкали с говядиной и свининой, сациви, хачапури по-менгрельски",
         style: "Теплый грузинский ресторан с глиняными кувшинами",
         description: "Ресторан высокой грузинской гастрономии, славящийся радушным приемом и обильными порциями.",
-        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad_1.avif",
         link: "https://visittyumen.ru/places/restoran-gruzinka-nani/"
     },
     {
@@ -1514,7 +1514,7 @@ const restaurants = [
         dishes: "Том ям с крабом, роллы премиум класса, димсамы со специями",
         style: "Концептуальный дизайн, дерево и канаты в интерьере",
         description: "Премиальный ресторан восточной и паназиатской кухни, предлагающий гостям обилие экзотических морепродуктов.",
-        image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/baozi.avif",
         link: "https://visittyumen.ru/places/restoran-lodka/"
     },
     {
@@ -1530,7 +1530,7 @@ const restaurants = [
         dishes: "Строганина из стерляди, запеченная дичь, старинные наливки",
         style: "Аристократический дворянский особняк XIX века",
         description: "Роскошный классический ресторан в исторической усадьбе, воспроизводящий гастрономию царской эпохи.",
-        image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/red_rest.avif",
         link: "https://visittyumen.ru/places/restoratsiya-turgenev/"
     },
     {
@@ -1546,7 +1546,7 @@ const restaurants = [
         dishes: "Свежая буррата, пицца из дровяной печи, домашний сырники",
         style: "Деревенский шик с открытой сыроварней",
         description: "Знаменитый семейный ресторан Аркадия Новикова, где мягкие сыры производят прямо на месте.",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/steak_with_tomato.avif",
         link: "https://visittyumen.ru/places/restoran-syrovarnya-/"
     },
     {
@@ -1562,7 +1562,7 @@ const restaurants = [
         dishes: "Хинкали мини в сливочном соусе, хачапури пеновани, шашлыки",
         style: "Современный кавказский интерьер с репродукциями картин",
         description: "Концептуальное ироничное кафе, объединяющее грузинское хлебосольство и европейскую культуру.",
-        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad_1.avif",
         link: "https://visittyumen.ru/places/kafe-van-gogi/"
     },
     {
@@ -1578,7 +1578,7 @@ const restaurants = [
         dishes: "Филе миньон с трюфельным соусом, салат с утиной грудкой, изысканные десерты",
         style: "Замковый аристократический интерьер",
         description: "Роскошный ресторан при бутик-отеле в виде средневекового замка, идеальное место для торжественных приемов.",
-        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/black_rest.avif",
         link: "https://visittyumen.ru/places/restoran-green-hous/"
     },
     {
@@ -1594,7 +1594,7 @@ const restaurants = [
         dishes: "Запеченный поросенок, купеческий борщ, сибирская дичь под ягодным соусом",
         style: "Классический усадебный русский стиль",
         description: "Традиционный русский ресторан у лесопарковой зоны, славящийся проведением широких торжеств и купеческой кухней.",
-        image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad.avif",
         link: "https://visittyumen.ru/places/restoran-solovinaya-roshcha/"
     },
     {
@@ -1610,7 +1610,7 @@ const restaurants = [
         dishes: "Свиные ребра барбекю, крафтовые бургеры, стейки, пивные сеты",
         style: "Яркий бруклинский лофт, совмещенный с дорожками боулинга",
         description: "Уникальный масштабный формат, совмещающий ресторанную гриль-кухню высокого уровня и спортивный боулинг.",
-        image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/taco.avif",
         link: "https://visittyumen.ru/places/bouling-restoran-brooklyn-bowl/"
     },
     {
@@ -1626,7 +1626,7 @@ const restaurants = [
         dishes: "Бургер со смородиновым вареньем и камамбером, черные бургеры",
         style: "Уличный андеграундный молодежный лофт",
         description: "Культовая локальная бургерная лаборатория с оригинальными смелыми гастрономическими сочетаниями.",
-        image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/taco.avif",
         link: "https://visittyumen.ru/places/burgernaya-kak-my-lyubim/"
     },
     {
@@ -1642,7 +1642,7 @@ const restaurants = [
         dishes: "Плескавица с сыром, чевапчичи, сербский салат, балканский суп",
         style: "Традиционная сербская городская кафана",
         description: "Аутентичный ресторан балканской кухни, славящийся огромными мясными позициями по традиционным рецептам Белграда.",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/steak_with_tomato.avif",
         link: "https://visittyumen.ru/places/restoran-beograd-kafana/"
     },
     {
@@ -1658,7 +1658,7 @@ const restaurants = [
         dishes: "Уха из стерляди и налима, царские блины с икрой, кулебяка мясная",
         style: "Деревянный терем в стиле купеческих палат",
         description: "Тематический ресторан старорусской кухни премиум-класса с воссозданными старинными ритуалами трапезы.",
-        image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad.avif",
         link: "https://visittyumen.ru/places/russkiy-restoran-maksimych/"
     },
     {
@@ -1674,7 +1674,7 @@ const restaurants = [
         dishes: "Tesla бургер, бургер с брусничным соусом, сырные подушечки",
         style: "Современное технологичное экспресс-кафе",
         description: "Крупная локальная сеть качественного бургерного фастфуда со знаменитыми ягодными и сырными соусами.",
-        image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/taco.avif",
         link: "https://visittyumen.ru/places/burgernaya-tesla-burger/"
     },
     {
@@ -1690,7 +1690,7 @@ const restaurants = [
         dishes: "Паста с морепродуктами, салат Цезарь с цыпленком, легкие барные сеты",
         style: "Современный уютный городской лаунж",
         description: "Универсальное городское заведение с понятной европейской кухней, кальянами и коктейльной картой.",
-        image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salmon.avif",
         link: "https://visittyumen.ru/places/kafe-bar-malina/"
     },
     {
@@ -1706,7 +1706,7 @@ const restaurants = [
         dishes: "Хинкали классические, хачапури по-аджарски, суп харчо",
         style: "Минималистичное светлое кавказское бистро",
         description: "Современный быстрый формат грузинской кухни, ориентированный на скорость подачи и высокое качество выпечки.",
-        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad_1.avif",
         link: "https://visittyumen.ru/places/gruzinskoe-bistro-bashi/"
     },
     {
@@ -1722,7 +1722,7 @@ const restaurants = [
         dishes: "Роллы Филадельфия, паста карбонара, сырный суп, пицца",
         style: "Мягкий домашний интерьер с книжными полками",
         description: "Популярная сеть мягких семейных ресторанов с огромным универсальным меню на любой гастрономический вкус.",
-        image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/cafe.avif",
         link: "https://visittyumen.ru/places/uyutnyy-restoran-svoya-kompaniya/"
     },
     {
@@ -1738,7 +1738,7 @@ const restaurants = [
         dishes: "Детские стилизованные котлетки, паста, авторские пирожные",
         style: "Сказка, огромная игровая зона, мягкие кресла",
         description: "Семейное уютное кондитерское кафе с уникальной детской анимацией, игровыми комнатами и семейным меню.",
-        image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/coffee.avif",
         link: "https://visittyumen.ru/places/semeynoe-kafe-anderson/"
     },
     {
@@ -1754,7 +1754,7 @@ const restaurants = [
         dishes: "Чайханский плов, казан-кебаб из телятины, восточные лепешки",
         style: "Лаунж-бар, ковры в современном прочтении, мягкий свет",
         description: "Ресторан современной узбекской кухни в формате стильного городского лаунжа с кальянами и открытым грилем.",
-        image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/gyoza.avif",
         link: "https://visittyumen.ru/places/plov-lounge/"
     },
     {
@@ -1770,7 +1770,7 @@ const restaurants = [
         dishes: "Классический раф, эклеры, круассаны с шоколадом",
         style: "Классический музыкально-литературный кофейный салон",
         description: "Тихая академическая городская кофейня рядом с филармонией, идеальная для встреч за чашкой чая.",
-        image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/coffee_1.avif",
         link: "https://visittyumen.ru/places/kofeynya-prokofev/"
     },
     {
@@ -1786,7 +1786,7 @@ const restaurants = [
         dishes: "Хинкали сочные, хачапури по-аджарски лодочка, шашлык мясной",
         style: "Традиционный кавказский интерьер с винными бочками",
         description: "Большой семейный ресторан кавказской кухни, специализирующийся на классических рецептах Тбилиси.",
-        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/salad_1.avif",
         link: "https://visittyumen.ru/places/restoran-sameba/"
     },
     {
@@ -1802,7 +1802,7 @@ const restaurants = [
         dishes: "Барбекю на веранде, запеченная стерлядь, домашние пироги со смородиной",
         style: "Дворянская дачная усадьба, светлые террасы",
         description: "Элегантный загородный ресторан, воспроизводящий дореволюционную дачную гастрономию интеллигенции.",
-        image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/red_rest.avif",
         link: "https://visittyumen.ru/places/zagorodnyy-restoran-dacha/"
     },
     {
@@ -1818,7 +1818,7 @@ const restaurants = [
         dishes: "Лапша Чихо, говядина в устричном соусе, битые огурцы",
         style: "Аутентичный сумасшедший стрит-дизайн Пекина с иероглифами",
         description: "Шумная концептуальная китайская закусочная с атмосферой неоновых переулков азиатских мегаполисов.",
-        image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/baozi.avif",
         link: "https://visittyumen.ru/places/kitayskaya-zakusochnaya-chikho/"
     },
     {
@@ -1834,7 +1834,7 @@ const restaurants = [
         dishes: "Фирменный бургер «Дед», мясная сковорода, крафтовое пиво, настойки",
         style: "Концептуальный стимпанк интерьер, обилие шестеренок",
         description: "Один из известнейших концепт-баров города с уникальным дизайном в стиле стимпанк и сильной барной кухней.",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/bar.avif",
         link: "https://visittyumen.ru/places/bar-rzhavyy-ded/"
     },
     {
@@ -1850,7 +1850,7 @@ const restaurants = [
         dishes: "Суп фо бо, немы с крабом, том ям с креветками, жареный рис",
         style: "Современный минималистичный азиатский стрит-дизайн",
         description: "Уютное городское паназиатское бистро, славящееся каноничным вьетнамским супом фо бо на говяжьем бульоне.",
-        image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/baozi.avif",
         link: "https://visittyumen.ru/places/bistro-96-aziatok/"
     },
     {
@@ -1866,7 +1866,7 @@ const restaurants = [
         dishes: "Корн-доги, токпокки в остром соусе, корейский жареный цыпленок, бабл ти",
         style: "Яркий розово-неоновый интерьер, K-Pop культура и постеры",
         description: "Трендовое молодежное корейское кафе, полностью посвященное современной корейской поп-культуре и стритфуду.",
-        image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/baozi.avif",
         link: "https://visittyumen.ru/places/chiko/"
     },
     {
@@ -1882,7 +1882,7 @@ const restaurants = [
         dishes: "Сашими из тунца блюфин, премиальные роллы без риса, гунканы",
         style: "Изысканный японский премиальный минимализм",
         description: "Элитный японский гастрономический ресторан, специализирующийся на поставках редкой дикой рыбы напрямую из Токио.",
-        image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=800&auto=format&fit=crop",
+        image: "detail_photo/baozi.avif",
         link: "https://visittyumen.ru/places/restoran-umi/"
     }
 ];
