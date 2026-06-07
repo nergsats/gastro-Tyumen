@@ -141,3 +141,13 @@ html.dark .quiz-answer-btn:hover {
 .route-checkbox {
     accent-color: #d47b52;
 }
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-rows: 1fr auto !important; /* Карта сверху, панель снизу */
+    }
+    aside {
+        height: 50vh !important; /* Панель занимает половину экрана на мобилке */
+        overflow-y: auto;
+    }
+}
