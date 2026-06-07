@@ -1,4 +1,4 @@
-﻿function initTheme() {
+function initTheme() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
         document.documentElement.classList.remove('dark');
@@ -90,7 +90,7 @@ const restaurants = [
         dishes: "Плато морепродуктов, уха из северных рыб, запеченный лобстер",
         style: "Классический премиальный интерьер",
         description: "Один из старейших рыбных ресторанов города со строгим премиальным обслуживанием.",
-        image: "https://images.unsplash.com/photo-1534080391025-a7f0e6d8b83e?q=80&w=800&auto=format&fit=crop",
+        image: "https://arriah.ru/upload/iblock/6ff/hltnfuhemc7vonzht33l8wvwfldu9mlw.jpg",
         link: "https://visittyumen.ru/places/restoran-poseydon/"
     },
     {
@@ -1002,7 +1002,7 @@ const restaurants = [
         dishes: "Мидии в сырном соусе в кастрюльке, хрустящий багет, устрицы",
         style: "Уличный морской прибрежный концепт",
         description: "Популярный ресторан стрит-фуд формата морепродуктов, визитной карточкой которого являются кастрюльки свежих мидий в соусах.",
-        image: "https://images.unsplash.com/photo-1534080391025-a7f0e6d8b83e?q=80&w=800&auto=format&fit=crop",
+        image: "https://arriah.ru/upload/iblock/6ff/hltnfuhemc7vonzht33l8wvwfldu9mlw.jpg",
         link: "https://visittyumen.ru/places/restoran-moreproduktov-midiynoe-mesto/"
     },
     {
@@ -2064,6 +2064,11 @@ function createPlacemark(coords, restaurant) {
 }
 
 // Переключение вкладки сайдбара
+// Автоматическая и безопасная инициализация переменной для ближайшего пути, чтобы JS не падал
+if (typeof window.activeNearestRoute === 'undefined') {
+    window.activeNearestRoute = null;
+}
+
 function switchTab(tabId) {
     currentTab = tabId;
     const tabs = ['catalog', 'quiz', 'services'];
@@ -2099,28 +2104,85 @@ function switchTab(tabId) {
     }
     else if (tabId === 'catalog') {
         if (filterContainer) filterContainer.classList.remove('hidden');
-
-        if (!nearestGeoRestaurant) {
-            if (targetMarkersCollection) targetMarkersCollection.removeAll();
-        } else {
-            renderNearestGeoComponents();
-        }
         renderRestaurants();
     }
     else if (tabId === 'services') {
         if (filterContainer) filterContainer.classList.add('hidden');
 
-        // Очищаем карту от маркеров каталога и квиза
+        // Очищаем слой общего каталога
         if (geoCollection) geoCollection.removeAll();
 
-        // ВОССТАНАВЛИВАЕМ линию маршрута при возврате в Навигацию
-        if (activeMultiRoute && map) {
+        // 1. СНАЧАЛА восстанавливаем ближайшее заведение
+        // Отрисовываем его первым, чтобы его внутренние очистки карт НЕ ломали экскурсию
+        if (nearestGeoRestaurant) {
+            renderNearestGeoComponents();
+        } else {
+            if (targetMarkersCollection) targetMarkersCollection.removeAll();
         }
 
-        if (!nearestGeoRestaurant) {
-            if (targetMarkersCollection) targetMarkersCollection.removeAll();
+        // 2. СЛЕДОМ восстанавливаем/пересобираем экскурсионный маршрут
+        // Проверяем чекбоксы. Если пользователь их выбрал — маршрут ДОЛЖЕН БЫТЬ на карте железно!
+        const checkboxes = document.querySelectorAll('.route-checkbox:checked');
+
+        if (checkboxes.length >= 2) {
+            const points = [];
+            const routeRestaurants = [];
+
+            checkboxes.forEach(cb => {
+                const id = cb.value;
+                const restaurant = restaurants.find(r => r.id == id);
+                const rCoords = ensureArrayCoords(coordsCache[id]);
+                if (rCoords && restaurant) {
+                    points.push(rCoords);
+                    routeRestaurants.push(restaurant);
+                }
+            });
+
+            if (points.length >= 2) {
+                // Если квиз или геолокация полностью стерли линию из памяти карты — создаем её заново
+                if (!activeMultiRoute && typeof ymaps !== 'undefined') {
+                    activeMultiRoute = new ymaps.Polyline(points, {
+                        balloonContent: "Ваш экскурсионный гастро-маршрут"
+                    }, {
+                        strokeColor: "#d47b52",
+                        strokeWidth: 4,
+                        strokeOpacity: 0.85,
+                        strokeStyle: 'shortdash'
+                    });
+                }
+
+                // Force-добавление линии на карту (удаляем старую копию, если она была, и ставим чистую)
+                if (map) {
+                    map.geoObjects.remove(activeMultiRoute);
+                    map.geoObjects.add(activeMultiRoute);
+                }
+
+                // Генерируем оранжевые маркеры поверх того, что нарисовал гео-поиск
+                routeRestaurants.forEach(r => {
+                    const coords = ensureArrayCoords(coordsCache[r.id]);
+                    if (coords) {
+                        const pm = new ymaps.Placemark(coords, {
+                            balloonContentHeader: `<b style="color:#d47b52;">${r.name}</b>`,
+                            balloonContentBody: `Адрес: ${r.address}`
+                        }, {
+                            preset: 'islands#orangeFoodIcon',
+                            zIndex: 8000
+                        });
+                        targetMarkersCollection.add(pm);
+                    }
+                });
+            }
         } else {
-            renderNearestGeoComponents();
+            // Если галочек нет, а линия осталась в памяти — убираем её с карты
+            if (activeMultiRoute && map) {
+                map.geoObjects.remove(activeMultiRoute);
+                activeMultiRoute = null;
+            }
+        }
+
+        // Финально выводим объединенную коллекцию маркеров (Ближайший + Экскурсия) на карту
+        if (map && targetMarkersCollection) {
+            map.geoObjects.add(targetMarkersCollection);
         }
     }
 }
@@ -2196,7 +2258,7 @@ function showRestaurantDetails(id, panTo = false) {
     // Определяем ключ категории (приводим к нижнему регистру)
     const categoryKey = (r.category || '').toLowerCase();
     // Берём картинку из объекта или заглушку
-    const imageSrc = categoryImages[categoryKey] || DEFAULT_IMAGE;
+    const imageSrc = r.image || categoryImages[categoryKey] || DEFAULT_IMAGE;
     document.getElementById('details-img').src = imageSrc;
     document.getElementById('details-badge').innerText = r.category || '';
     document.getElementById('details-name').innerText = r.name || '';
@@ -2264,6 +2326,57 @@ function closeDetails() {
         // ВОЗВРАЩАЕМ линию маршрута после закрытия деталей
         if (activeMultiRoute && map) {
             map.geoObjects.add(activeMultiRoute);
+            const checkboxes = document.querySelectorAll('.route-checkbox:checked');
+
+        if (checkboxes.length >= 2) {
+            const points = [];
+            const routeRestaurants = [];
+
+            checkboxes.forEach(cb => {
+                const id = cb.value;
+                const restaurant = restaurants.find(r => r.id == id);
+                const rCoords = ensureArrayCoords(coordsCache[id]);
+                if (rCoords && restaurant) {
+                    points.push(rCoords);
+                    routeRestaurants.push(restaurant);
+                }
+            });
+
+            if (points.length >= 2) {
+                // Если квиз или геолокация полностью стерли линию из памяти карты — создаем её заново
+                if (!activeMultiRoute && typeof ymaps !== 'undefined') {
+                    activeMultiRoute = new ymaps.Polyline(points, {
+                        balloonContent: "Ваш экскурсионный гастро-маршрут"
+                    }, {
+                        strokeColor: "#d47b52",
+                        strokeWidth: 4,
+                        strokeOpacity: 0.85,
+                        strokeStyle: 'shortdash'
+                    });
+                }
+
+                // Force-добавление линии на карту (удаляем старую копию, если она была, и ставим чистую)
+                if (map) {
+                    map.geoObjects.remove(activeMultiRoute);
+                    map.geoObjects.add(activeMultiRoute);
+                }
+
+                // Генерируем оранжевые маркеры поверх того, что нарисовал гео-поиск
+                routeRestaurants.forEach(r => {
+                    const coords = ensureArrayCoords(coordsCache[r.id]);
+                    if (coords) {
+                        const pm = new ymaps.Placemark(coords, {
+                            balloonContentHeader: `<b style="color:#d47b52;">${r.name}</b>`,
+                            balloonContentBody: `Адрес: ${r.address}`
+                        }, {
+                            preset: 'islands#orangeFoodIcon',
+                            zIndex: 8000
+                        });
+                        targetMarkersCollection.add(pm);
+                    }
+                });
+            }
+        }
         }
     }
     else {
@@ -2732,7 +2845,6 @@ function buildSelectedRoute() {
     const routeRestaurants = [];
 
     for (let id of selectedIds) {
-        // ИСПРАВЛЕНО: нестрогое равенство (==), чтобы типы данных не конфликтовали
         const restaurant = restaurants.find(r => r.id == id);
         const rCoords = ensureArrayCoords(coordsCache[id]);
         if (rCoords && restaurant) {
@@ -2746,12 +2858,19 @@ function buildSelectedRoute() {
         return;
     }
 
-    clearBuiltRoute();
+    // Вместо вызова полного сброса clearBuiltRoute() удаляем только старую линию,
+    // чтобы не сбросить чекбоксы, которые пользователь только что выбрал.
+    if (activeMultiRoute && map) {
+        map.geoObjects.remove(activeMultiRoute);
+        activeMultiRoute = null;
+    }
+
     if (geoCollection) geoCollection.removeAll();
-    if (targetMarkersCollection) targetMarkersCollection.removeAll(); // Очищаем старые маркеры маршрута
+    if (targetMarkersCollection) targetMarkersCollection.removeAll();
 
     previousTab = 'services';
 
+    // Запись экскурсионного маршрута в вашу переменную activeMultiRoute
     activeMultiRoute = new ymaps.Polyline(points, {
         balloonContent: "Ваш экскурсионный гастро-маршрут"
     }, {
@@ -2761,7 +2880,6 @@ function buildSelectedRoute() {
         strokeStyle: 'shortdash'
     });
 
-    // ИСПРАВЛЕНО: используем переменную map, которая инициализирована в твоем коде
     if (map) {
         map.geoObjects.add(activeMultiRoute);
 
@@ -2777,8 +2895,9 @@ function buildSelectedRoute() {
                 });
                 targetMarkersCollection.add(pm);
             }
-            map.geoObjects.add(targetMarkersCollection);
         });
+
+        map.geoObjects.add(targetMarkersCollection);
 
         map.setBounds(activeMultiRoute.geometry.getBounds(), {
             checkZoomRange: true,
@@ -2800,27 +2919,45 @@ function openInYandexMaps() {
     for (let id of selectedIds) {
         const rCoords = ensureArrayCoords(coordsCache[id]);
         if (rCoords) {
-            // Форматируем для URL Яндекса: Широта,Долгота
             pointsArray.push(`${rCoords[0]},${rCoords[1]}`);
         }
     }
 
     if (pointsArray.length < 2) return;
 
-    // Склеиваем точки через ~ и принудительно задаем пешеходный режим (rtt=pd)
     const rtextParam = pointsArray.join('~');
     const yandexMapsUrl = `https://yandex.ru/maps/?rtext=${rtextParam}&rtt=pd`;
 
-    // Открываем бесплатный маршрут в новой вкладке (на смартфонах откроется приложение Яндекс.Карты)
     window.open(yandexMapsUrl, '_blank');
 }
 
 function clearBuiltRoute() {
+    // 1. Удаляем линию маршрута с карты и обнуляем переменную
     if (activeMultiRoute && map) {
         map.geoObjects.remove(activeMultiRoute);
         activeMultiRoute = null;
-        console.log("✓ Карта очищена от старых путей.");
     }
+
+    // 2. Полностью вычищаем маркеры точек маршрута
+    if (targetMarkersCollection) {
+        targetMarkersCollection.removeAll();
+        renderNearestGeoComponents();
+    }
+
+    // 3. Снимаем галочки со всех чекбоксов в списке
+    const checkboxes = document.querySelectorAll('.route-checkbox');
+    checkboxes.forEach(cb => {
+        cb.checked = false;
+    });
+
+    // 4. Сбрасываем сохраненное ближайшее заведение
+    nearestGeoRestaurant = null;
+
+    // 5. Скрываем кнопку внешних карт
+    const extBtn = document.getElementById("external-nav-btn");
+    if (extBtn) extBtn.classList.add("hidden");
+
+    console.log("✓ Карта очищена от путей, маркеры удалены, чекбоксы сброшены.");
 }
 
 function handleSearch(searchValue) {
